@@ -1,0 +1,286 @@
+html, address,
+blockquote,
+body, dd, div,
+dl, dt, fieldset, form,
+frame, frameset,
+h1, h2, h3, h4,
+h5, h6, noframes,
+ol, p, ul, center,
+dir, hr, menu, pre   { display: block; unicode-bidi: embed }
+li              { display: list-item }
+head            { display: none }
+table           { display: table }
+tr              { display: table-row }
+thead           { display: table-header-group }
+tbody           { display: table-row-group }
+tfoot           { display: table-footer-group }
+col             { display: table-column }
+colgroup        { display: table-column-group }
+td, th          { display: table-cell }
+caption         { display: table-caption }
+th              { font-weight: bolder; text-align: center }
+caption         { text-align: center }
+body            { margin: 8px }
+h1              { font-size: 2em; margin: .67em 0 }
+h2              { font-size: 1.5em; margin: .75em 0 }
+h3              { font-size: 1.17em; margin: .83em 0 }
+h4, p,
+blockquote, ul,
+fieldset, form,
+ol, dl, dir,
+menu            { margin: 1.12em 0 }
+h5              { font-size: .83em; margin: 1.5em 0 }
+h6              { font-size: .75em; margin: 1.67em 0 }
+h1, h2, h3, h4,
+h5, h6, b,
+strong          { font-weight: bolder }
+blockquote      { margin-left: 40px; margin-right: 40px }
+i, cite, em,
+var, address    { font-style: italic }
+pre, tt, code,
+kbd, samp       { font-family: monospace }
+pre             { white-space: pre }
+button, textarea,
+input, select   { display: inline-block }
+big             { font-size: 1.17em }
+small, sub, sup { font-size: .83em }
+sub             { vertical-align: sub }
+sup             { vertical-align: super }
+table           { border-spacing: 2px; }
+thead, tbody,
+tfoot           { vertical-align: middle }
+td, th, tr      { vertical-align: inherit }
+s, strike, del  { text-decoration: line-through }
+hr              { border: 1px inset }
+ol, ul, dir,
+menu, dd        { margin-left: 40px }
+ol              { list-style-type: decimal }
+ol ul, ul ol,
+ul ul, ol ol    { margin-top: 0; margin-bottom: 0 }
+u, ins          { text-decoration: underline }
+br:before       { content: "\A"; white-space: pre-line }
+center          { text-align: center }
+:link, :visited { text-decoration: underline }
+:focus          { outline: thin dotted invert }
+
+/* Begin bidirectionality settings (do not change) */
+BDO[DIR="ltr"]  { direction: ltr; unicode-bidi: bidi-override }
+BDO[DIR="rtl"]  { direction: rtl; unicode-bidi: bidi-override }
+
+*[DIR="ltr"]    { direction: ltr; unicode-bidi: embed }
+*[DIR="rtl"]    { direction: rtl; unicode-bidi: embed }
+
+@media print {
+  h1            { page-break-before: always }
+  h1, h2, h3,
+  h4, h5, h6    { page-break-after: avoid }
+  ul, ol, dl    { page-break-before: avoid }
+}
+/* General btn */
+header{
+    margin: 10px;
+    text-align: center;
+    display: none;
+}
+h1{
+    font-size: large;
+}
+h6{
+    margin: 5px;
+}
+/* div{
+    border: black solid 1px;
+} */
+.button-container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0px 1px 0px 1px;
+}
+button{
+    width: 80px;
+    height: 30px;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: rgb(66, 1, 1);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    line-height:25px;
+    opacity: 0.5;
+    margin:0px 1px 0px 1px;
+}
+
+button:hover {
+    background-color: #025505;
+    color: rgb(252, 156, 156);
+    opacity: 1;
+}
+
+
+
+/* Roof:       < main >  */
+/* Layer 1:   <main-container> */
+/* Layer 1.1:  <canvas (#arm-view)>*/
+/* Layer 1.2: btn-show-container */
+/* Layer 1.2.1: #btn-open-tab */
+
+/* Layer 2:   <input-container > #div-reference-tab*/
+/* Layer 2.1: #close-btn-tab-container*/
+/* Layer 2.1.1: #btn-close-tab*/
+
+/* Layer 2.2: div */
+/* Layer 2.2.1: h6 */
+/* Layer 2.2.2: position-control-container */
+/* Layer 2.2.2.1: button-container */
+/* Layer 2.2.2.1.1: button  zplus-btn ...*/
+
+/* Layer 2.3: div */
+/* Layer 2.3.1: h6 */
+/* Layer 2.3.2: group-joins-control-container */
+/* Layer 2.3.2.1: join-control-container */
+/* Layer 2.3.2.1.1: p  name-join-div*/
+/* Layer 2.3.2.1.2: p  curr-join-div*/
+/* Layer 2.3.2.1.3: btn  button-container*/
+/* Layer 2.3.2.1.4: ntn  button-container*/
+
+main{
+    /* display: grid;
+    grid-template-rows: 50% 20%; */
+}
+.main-container{
+    display: grid;
+    grid-template-columns: 95% auto;
+}
+.canvas-container{
+    width: 90%;
+    height: 90%;
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+}
+/* second-layer */
+#arm-view{
+    width: 100vw;
+    height: 100vh;
+}
+
+.btn-show-container{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    right: 10%;
+}
+
+#btn-open-tab{
+    position: absolute;
+    top: 30%;
+    height: 50px;
+    width: 50px;
+    border: red;
+    border-radius: 50%;
+    color: rgb(255, 145, 0);
+    background-color: rgb(48, 128, 248);
+}
+
+#btn-open-tab:hover{
+    background-color: rgb(173, 9, 9);
+    color: #4CAF50;
+}
+
+/* References COntrol tab */
+.input-container{
+    display: none;
+    grid-template-rows: 5% 40% auto;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    right: 3%;
+    top: 5%;
+    height: fit-content;
+}
+
+.input-container > div{
+    /* border: red solid 1px; */
+    background-color: white;
+}
+
+#close-btn-tab-container{
+    text-align: left;
+}
+#btn-close-tab{
+    width: 40px;
+    height: 40px;
+    color: black;
+    background-color: rgb(252, 229, 229);
+    border: rgb(250, 134, 1) 0px;
+    border-radius: 50%;
+}
+#btn-close-tab:hover{
+    color: #025505;
+    background-color: rgb(252, 0, 0);
+}
+
+.position-control-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    visibility: visible;
+
+}
+.group-joins-control-container{
+
+}
+
+/* third-layer */
+.position-control-container > div{
+    margin: 1px;
+}
+
+.join-control-container{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    margin:0px;
+    height: 40px;
+}
+
+/* four-layer */
+.name-join-div, .curr-join-div{
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+
+.join-control-container > div{
+    justify-content: center;
+    position: relative;
+}
+.end-effector-container{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+#Tmatrices-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+}
+#Tmatrices-container > div{
+    border: solid 0.1px;
+    
+}
+
+#setting-hide-contains{
+    display: none;
+}
+.setting-part-contain{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    padding: 0px 5px 0px 5px;
+}
+.setting-part-contain > div{
+    margin: 0px 10px 0px 10px;
+}

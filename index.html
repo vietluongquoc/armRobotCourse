@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href='./static/img/letter-l-svgrepo-com.svg' type="image/icon type">
+    <link rel="stylesheet" type="text/css" href="./static/css/style.css">
+    <script src="./vendor/mathjs/math.js" type="text/javascript"></script>
+    <script src="./vendor/jquery/jquery.js"></script>
+    <title>Arm Robots</title>
+</head>
+<body>
+    <header >
+        
+    </header>
+    <main>
+        <div class="main-container">
+            <div class="canvas-container">
+                <canvas id="arm-view">The brower doesn't support</canvas>
+            </div>
+            <div class="btn-show-container">
+                <input type="button" value ="C" id="btn-open-tab">
+            </div>
+        </div>
+        <div class="input-container" id="div-reference-tab">
+            <div id="close-btn-tab-container">
+                <input type="button" value="X" id="btn-close-tab">
+            </div>
+            <div>
+                <h6>POSITION CONTROL</h6>
+                <div class="position-control-container">
+                    <div></div>
+                    <div class="button-container">
+                        <button id="zplus-btn"> &#8593 Z+</button>
+                    </div>
+                    <div class="button-container">
+                        <button id="xneg-btn"> X- &#8599 </button>
+                    </div>
+                    <div class="button-container">
+                        
+                    </div>
+                    <div class="button-container">
+                        <button id="O-btn">O</button>
+                    </div>
+                    <div class="button-container">
+                        
+                    </div>
+                    <div class="button-container">
+                        <button id="xplus-btn"> &#8601 X+</button>
+                    </div>
+                    <div class="button-container">
+                        <button id="zneg-btn"> &#8595 Z-</button>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+            <div>
+                <h6>JOIN CONTROL</h6>
+                <div class="group-joins-control-container">
+                    
+                    <div class="join-control-container">
+                        <div class="name-join-div"><p>JOIN 1</p></div>
+                        <div class="curr-join-div"><p id="cur-join1">90</p></div>
+                        <div class="button-container">
+                            <button id="btn-up-join1">INC &#8593</button>
+                        </div>
+                        <div class="button-container">
+                            <button id="btn-down-join1">DES &#8595</button>
+                        </div>
+                    </div>
+                    <div class="join-control-container">
+                        <div class="name-join-div"><p>JOIN 2</p></div>
+                        <div class="curr-join-div"><p id="cur-join2">90</p></div>
+                        <div class="button-container">
+                            <button id="btn-up-join2">INC &#8593</button>
+                        </div>
+                        <div class="button-container">
+                            <button id="btn-down-join2">DES &#8595</button>
+                        </div>
+                    </div>
+                    <div class="join-control-container">
+                        <div class="name-join-div"><p>JOIN 3</p></div>
+                        <div class="curr-join-div"><p id="cur-join3">90</p></div>
+                        <div class="button-container">
+                            <button id="btn-up-join3">INC &#8593</button>
+                        </div>
+                        <div class="button-container">
+                            <button id="btn-down-join3">DES &#8595</button>
+                        </div>
+                    </div>
+                    <div class="join-control-container">
+                        <div class="name-join-div"><p>JOIN 4</p></div>
+                        <div class="curr-join-div"><p id="cur-join4">90</p></div>
+                        <div class="button-container">
+                            <button id="btn-up-join4">INC &#8593</button>
+                        </div>
+                        <div class="button-container">
+                            <button id="btn-down-join4">DES &#8595</button>
+                        </div>
+                    </div>
+                    <div class="end-effector-container">
+                        <p>GRIPPER</p>
+                        <div class="button-container">
+                            <button id="gripper-btn">ON</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="button-container">
+                            <button id="home-btn">HOME</button>
+                            <button id="setting-btn">SETTING</button>
+                        </div>
+                    </div>
+                    <div>
+                        <h6>HOMOGENEOUS TRANSFORMATION MATRICES</h6>
+                        <div id="Tmatrices-container">
+                        </div>
+                    </div>
+                    <div id="setting-hide-contains">
+                        <div class="setting-part-contain">
+                            <div><p>STEP-DIS</p></div>
+                            <div>
+                                <input type="range" id="dis-step-input" min="1" max="10" value="1" step="1" oninput="this.nextElementSibling.value = this.value">
+                                <output id="dis-step-output">1</output>
+                            </div>
+                            <p>CM</p>
+                        </div>
+                        <div class="setting-part-contain">
+                            <div><p>STEP-ROT</p></div>
+                            <div>
+                                <input type="range" id="rot-step-input" min="10" max="25" value="10" step="5" oninput="this.nextElementSibling.value = this.value">
+                                <output id="rot-step-output">2</output>
+                            </div>
+                            <p>DEG</p>
+                        </div>
+                        <!-- <div class="setting-part-contain">
+                            <div><p>SPEED-LEVEL</p></div>
+                            <div>
+                                <input type="range" id="speed-level-input" min="1" max="10" value="1" step="1" oninput="this.nextElementSibling.value = this.value">
+                                <output id="speed-level-output">1</output>
+                            </div>
+                            <button id="okay-setting-btn">SET</button>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="./static/js/mainN.js"></script>
+</body>
+</html>
